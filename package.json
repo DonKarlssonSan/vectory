@@ -1,0 +1,22 @@
+{
+  "name": "vectory",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./src/vector.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "keywords": [
+    "vector",
+    "math"
+  ],
+  "author": "Johan Karlsson <donkarlssonsan@gmail.com> (https://twitter.com/DonKarlssonSan)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DonKarlssonSan/vectory.git"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
