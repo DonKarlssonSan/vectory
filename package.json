@@ -1,7 +1,7 @@
 {
   "name": "vectory",
   "version": "0.0.1",
-  "description": "",
+  "description": "Vector Math Library",
   "main": "./src/vector.js",
   "scripts": {
     "test": "jasmine-node spec"
