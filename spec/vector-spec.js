@@ -68,4 +68,11 @@ describe("Vector", function () {
     expect(result.x).toBe(2);
     expect(result.y).toBe(3);    
   });
+
+  it("should get length squared", function () {
+    var v1 = new Vector(3, 4);
+    var result = v1.getLengthSq();
+
+    expect(result).toBe(25);
+  });
 });

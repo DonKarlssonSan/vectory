@@ -52,8 +52,12 @@ class Vector {
     return Math.atan2(this.y, this.x);
   }
   
-  getLength(){
+  getLength() {
     return Math.sqrt(this.x * this.x + this.y * this.y);
+  }
+
+  getLengthSq() {
+    return this.x * this.x + this.y * this.y;
   }
 }
 
