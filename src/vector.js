@@ -4,7 +4,7 @@ class Vector {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    }
+  }
 
   add(v) {
     return new Vector(
@@ -58,6 +58,10 @@ class Vector {
 
   getLengthSq() {
     return this.x * this.x + this.y * this.y;
+  }
+
+  distanceTo(v) {
+    return this.sub(v).getLength();
   }
 }
 

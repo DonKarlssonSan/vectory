@@ -82,4 +82,17 @@ describe("Vector", function () {
 
     expect(result).toBe(25);
   });
+
+  it("should return distance 5 between", function () {
+    var v1 = new Vector(7, 2);
+    var v2 = new Vector(4, 6);
+    var result = v1.distanceTo(v2);
+
+    expect(result).toBe(5);
+    expect(v1.x).toBe(7);
+    expect(v1.y).toBe(2);
+    expect(v2.x).toBe(4);
+    expect(v2.y).toBe(6);
+  });
+
 });
