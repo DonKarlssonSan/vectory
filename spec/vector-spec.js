@@ -95,4 +95,14 @@ describe("Vector", function () {
     expect(v2.y).toBe(6);
   });
 
+  it("should copy a vector", function () {
+    var v1 = new Vector(3, 4);
+    var v2 = v1.copy();
+    v1.x = 1;
+    v1.y = 2;
+
+    expect(v2.x).toBe(3);
+    expect(v2.y).toBe(4);
+  });
+
 });

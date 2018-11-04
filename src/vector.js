@@ -63,6 +63,10 @@ class Vector {
   distanceTo(v) {
     return this.sub(v).getLength();
   }
+
+  copy() {
+    return new Vector(this.x, this.y);
+  }
 }
 
 module.exports = Vector;
