@@ -105,4 +105,12 @@ describe("Vector", function () {
     expect(v2.y).toBe(4);
   });
 
+  it("should rotate a quarter turn anticlockwise", function () {
+    var v1 = new Vector(1, 0);
+    var v2 = v1.rotate(Math.PI / 2);
+
+    expect(v2.x).toBeCloseTo(0);
+    expect(v2.y).toBeCloseTo(1);
+  });
+
 });
