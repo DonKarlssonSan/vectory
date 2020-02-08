@@ -95,6 +95,18 @@ describe("Vector", function () {
     expect(v2.y).toBe(6);
   });
 
+  it("should return squared distance 25", function () {
+    var v1 = new Vector(7, 2);
+    var v2 = new Vector(4, 6);
+    var result = v1.distanceToSq(v2);
+
+    expect(result).toBe(25);
+    expect(v1.x).toBe(7);
+    expect(v1.y).toBe(2);
+    expect(v2.x).toBe(4);
+    expect(v2.y).toBe(6);
+  });
+
   it("should copy a vector", function () {
     var v1 = new Vector(3, 4);
     var v2 = v1.copy();

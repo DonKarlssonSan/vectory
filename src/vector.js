@@ -64,6 +64,10 @@ class Vector {
     return this.sub(v).getLength();
   }
 
+  distanceToSq(v) {
+    return this.sub(v).getLengthSq();
+  }
+  
   copy() {
     return new Vector(this.x, this.y);
   }
