@@ -2,6 +2,11 @@
 # vectory
 vectory is a JavaScript vector math library written in ES6.
 
+## Install
+````
+npm install vectory-lib
+````
+
 ## Using vectory, some examples
 First you need to load vectory. Note that vectory is just the name of the lib, but the JavaScript class is called Vector and the module is called vector.
 
