@@ -75,6 +75,12 @@ class Vector {
   rotate(angle) {
     return new Vector(this.x * Math.cos(angle) - this.y * Math.sin(angle), this.x * Math.sin(angle) + this.y * Math.cos(angle));
   }
+
+  rotateAround(v, angle) {
+    let x = (this.x - v.x) * Math.cos(angle) - (v.y - this.y) * Math.sin(angle) + v.x;
+    let y = (v.y - this.y) * Math.cos(angle) + (this.x - v.x) * Math.sin(angle) + v.y;
+    return new Vector(x, y);
+  }
 }
 
 module.exports = Vector;
