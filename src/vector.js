@@ -40,12 +40,14 @@ class Vector {
     var length = this.getLength();
     this.x = Math.cos(angle) * length;
     this.y = Math.sin(angle) * length;
+    return this;
   }
   
   setLength(length) {
     var angle = this.getAngle();
     this.x = Math.cos(angle) * length;
     this.y = Math.sin(angle) * length;
+    return this;
   }
   
   getAngle() {
@@ -81,6 +83,20 @@ class Vector {
     let y = (v.y - this.y) * Math.cos(angle) + (this.x - v.x) * Math.sin(angle) + v.y;
     return new Vector(x, y);
   }
-}
+  
+  lerp(v, t) {
+    let delta = v.sub(this).mult(t);
+    return this.add(delta);
+  }
 
+  lerpTo(v, t) {
+    let delta = v.sub(this).mult(t);
+    this.addTo(delta);
+  }
+
+  moveTowards(v, length) {
+    let delta = v.sub(this).setLength(length);
+    return this.add(delta);
+  }
+}
 module.exports = Vector;

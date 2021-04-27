@@ -133,4 +133,32 @@ describe("Vector", function () {
     expect(result.x).toBeCloseTo(2);
     expect(result.y).toBeCloseTo(2);
   });
+
+  it("should lerp to half distance", function () {
+    let v1 = new Vector(6, 0);
+    let v2 = new Vector(0, 0);
+    let result = v1.lerp(v2, 0.5);
+
+    expect(result.x).toBeCloseTo(3);
+    expect(result.y).toBeCloseTo(0);
+  });
+
+  it("should lerp to half distance", function () {
+    let v1 = new Vector(0, 0);
+    let v2 = new Vector(0, 6);
+    v1.lerpTo(v2, 0.5);
+
+    expect(v1.x).toBeCloseTo(0);
+    expect(v1.y).toBeCloseTo(3);
+  });
+
+  it("should move 5 units", function () {
+    let v1 = new Vector(0, 0);
+    let v2 = new Vector(0, 6);
+    let result = v1.moveTowards(v2, 5);
+
+    expect(result.x).toBeCloseTo(0);
+    expect(result.y).toBeCloseTo(5);
+  });
+
 });
