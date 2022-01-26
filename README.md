@@ -8,10 +8,11 @@ npm install vectory-lib
 ````
 
 ## Using vectory, some examples
-First you need to load vectory. Note that vectory is just the name of the lib, but the JavaScript class is called Vector and the module is called vector.
+First you need to load vectory. Note that vectory is just the name of the lib, but the JavaScript class is called Vector and the module is called vectory-lib.
 
 ````
-let Vector = require("vector");
+import Vector from 'vectory-lib';
+
 ````
 
 Adding with v1.add(v2). Does not change v1.
