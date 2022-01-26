@@ -1,4 +1,5 @@
-var Vector = require("../src/vector");
+import Vector from "../src/vector.js";
+import { expect } from "chai";
 
 describe("Vector", function () {
   it("should add", function () {
@@ -6,8 +7,8 @@ describe("Vector", function () {
     var v2 = new Vector(4, 5);
 
     var sum = v1.add(v2);
-    expect(sum.x).toBe(6);
-    expect(sum.y).toBe(8);
+    expect(sum.x).to.equal(6);
+    expect(sum.y).to.equal(8);
   });
 
   it("should add to", function () {
@@ -15,8 +16,8 @@ describe("Vector", function () {
     var v2 = new Vector(4, 5);
 
     v1.addTo(v2);
-    expect(v1.x).toBe(6);
-    expect(v1.y).toBe(8);
+    expect(v1.x).to.equal(6);
+    expect(v1.y).to.equal(8);
   });
 
   it("should subtract", function () {
@@ -24,8 +25,8 @@ describe("Vector", function () {
     var v2 = new Vector(4, 5);
 
     var diff = v1.sub(v2);
-    expect(diff.x).toBe(-2);
-    expect(diff.y).toBe(-2);
+    expect(diff.x).to.equal(-2);
+    expect(diff.y).to.equal(-2);
   });
 
   it("should subtract from", function () {
@@ -33,54 +34,54 @@ describe("Vector", function () {
     var v2 = new Vector(4, 5);
 
     v1.subFrom(v2);
-    expect(v1.x).toBe(-2);
-    expect(v1.y).toBe(-2);
+    expect(v1.x).to.equal(-2);
+    expect(v1.y).to.equal(-2);
   });
 
   it("should set angle", function () {
     var v1 = new Vector(1, 0);
     v1.setAngle(Math.PI / 2);
 
-    expect(v1.x).toBeCloseTo(0);
-    expect(v1.y).toBeCloseTo(1);
+    expect(v1.x).to.be.closeTo(0, 0.001);
+    expect(v1.y).to.be.closeTo(1, 0.001);
   });
 
   it("should set length", function () {
     var v1 = new Vector(1, 0);
     v1.setLength(2);
 
-    expect(v1.x).toBe(2);
-    expect(v1.y).toBe(0);
+    expect(v1.x).to.equal(2);
+    expect(v1.y).to.equal(0);
   });
   
   it("should multiply", function () {
     var v1 = new Vector(2, 3);
     var result = v1.mult(3);
 
-    expect(result.x).toBe(6);
-    expect(result.y).toBe(9);    
+    expect(result.x).to.equal(6);
+    expect(result.y).to.equal(9);    
   });
   
   it("should divide", function () {
     var v1 = new Vector(6, 9);
     var result = v1.div(3);
 
-    expect(result.x).toBe(2);
-    expect(result.y).toBe(3);    
+    expect(result.x).to.equal(2);
+    expect(result.y).to.equal(3);    
   });
 
   it("should get length", function () {
     var v1 = new Vector(3, 4);
     var result = v1.getLength();
 
-    expect(result).toBe(5);
+    expect(result).to.equal(5);
   });
 
   it("should get length squared", function () {
     var v1 = new Vector(3, 4);
     var result = v1.getLengthSq();
 
-    expect(result).toBe(25);
+    expect(result).to.equal(25);
   });
 
   it("should return distance 5 between", function () {
@@ -88,11 +89,11 @@ describe("Vector", function () {
     var v2 = new Vector(4, 6);
     var result = v1.distanceTo(v2);
 
-    expect(result).toBe(5);
-    expect(v1.x).toBe(7);
-    expect(v1.y).toBe(2);
-    expect(v2.x).toBe(4);
-    expect(v2.y).toBe(6);
+    expect(result).to.equal(5);
+    expect(v1.x).to.equal(7);
+    expect(v1.y).to.equal(2);
+    expect(v2.x).to.equal(4);
+    expect(v2.y).to.equal(6);
   });
 
   it("should return squared distance 25", function () {
@@ -100,11 +101,11 @@ describe("Vector", function () {
     var v2 = new Vector(4, 6);
     var result = v1.distanceToSq(v2);
 
-    expect(result).toBe(25);
-    expect(v1.x).toBe(7);
-    expect(v1.y).toBe(2);
-    expect(v2.x).toBe(4);
-    expect(v2.y).toBe(6);
+    expect(result).to.equal(25);
+    expect(v1.x).to.equal(7);
+    expect(v1.y).to.equal(2);
+    expect(v2.x).to.equal(4);
+    expect(v2.y).to.equal(6);
   });
 
   it("should copy a vector", function () {
@@ -113,16 +114,16 @@ describe("Vector", function () {
     v1.x = 1;
     v1.y = 2;
 
-    expect(v2.x).toBe(3);
-    expect(v2.y).toBe(4);
+    expect(v2.x).to.equal(3);
+    expect(v2.y).to.equal(4);
   });
 
   it("should rotate a quarter turn anticlockwise", function () {
     var v1 = new Vector(1, 0);
     var v2 = v1.rotate(Math.PI / 2);
 
-    expect(v2.x).toBeCloseTo(0);
-    expect(v2.y).toBeCloseTo(1);
+    expect(v2.x).to.be.closeTo(0, 0.01);
+    expect(v2.y).to.be.closeTo(1, 0.01);
   });
 
   it("should rotate a quarter turn anticlockwise around another point", function () {
@@ -130,8 +131,8 @@ describe("Vector", function () {
     var v2 = new Vector(2, 0);
     var result = v1.rotateAround(v2, Math.PI / 2);
 
-    expect(result.x).toBeCloseTo(2);
-    expect(result.y).toBeCloseTo(2);
+    expect(result.x).to.be.closeTo(2, 0.001);
+    expect(result.y).to.be.closeTo(2, 0.001);
   });
 
   it("should lerp to half distance", function () {
@@ -139,8 +140,8 @@ describe("Vector", function () {
     let v2 = new Vector(0, 0);
     let result = v1.lerp(v2, 0.5);
 
-    expect(result.x).toBeCloseTo(3);
-    expect(result.y).toBeCloseTo(0);
+    expect(result.x).to.be.closeTo(3, 0.001);
+    expect(result.y).to.be.closeTo(0, 0.001);
   });
 
   it("should lerp to half distance", function () {
@@ -148,8 +149,8 @@ describe("Vector", function () {
     let v2 = new Vector(0, 6);
     v1.lerpTo(v2, 0.5);
 
-    expect(v1.x).toBeCloseTo(0);
-    expect(v1.y).toBeCloseTo(3);
+    expect(v1.x).to.be.closeTo(0, 0.001);
+    expect(v1.y).to.be.closeTo(3, 0.001);
   });
 
   it("should move 5 units", function () {
@@ -157,8 +158,8 @@ describe("Vector", function () {
     let v2 = new Vector(0, 6);
     let result = v1.moveTowards(v2, 5);
 
-    expect(result.x).toBeCloseTo(0);
-    expect(result.y).toBeCloseTo(5);
+    expect(result.x).to.be.closeTo(0, 0.001);
+    expect(result.y).to.be.closeTo(5, 0.001);
   });
 
 });
