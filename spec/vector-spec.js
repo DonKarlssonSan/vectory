@@ -162,4 +162,19 @@ describe("Vector", function () {
     expect(result.y).to.be.closeTo(5, 0.001);
   });
 
+  it("should not be equal", function () {
+    let v1 = new Vector(0, 0);
+    let v2 = new Vector(0, 6);
+    let result = v1.equals(v2);
+
+    expect(result).to.be.false;
+  });
+
+  it("should be equal", function () {
+    let v1 = new Vector(0, 6);
+    let v2 = new Vector(0, 6);
+    let result = v1.equals(v2);
+
+    expect(result).to.be.true;
+  });
 });

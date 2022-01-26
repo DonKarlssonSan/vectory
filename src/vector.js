@@ -96,4 +96,8 @@ export default class Vector {
     let delta = v.sub(this).setLength(length);
     return this.add(delta);
   }
+
+  equals(v) {
+    return this.x == v.x && this.y == v.y;
+  }
 }
