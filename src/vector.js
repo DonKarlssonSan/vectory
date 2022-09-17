@@ -102,10 +102,10 @@ export default class Vector {
   }
 
   reflectAlongX() {
-    this.setAngle(Math.atan2(-this.y, this.x));
+    this.y *= -1;
   }
 
   reflectAlongY() {
-    this.setAngle(Math.atan2(this.y, -this.x));
+    this.x *= -1;
   }
 }
