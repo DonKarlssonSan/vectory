@@ -100,4 +100,12 @@ export default class Vector {
   equals(v) {
     return this.x == v.x && this.y == v.y;
   }
+
+  reflectAlongX() {
+    this.setAngle(Math.atan2(-this.y, this.x));
+  }
+
+  reflectAlongY() {
+    this.setAngle(Math.atan2(this.y, -this.x));
+  }
 }

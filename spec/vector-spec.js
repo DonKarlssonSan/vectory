@@ -177,4 +177,22 @@ describe("Vector", function () {
 
     expect(result).to.be.true;
   });
+
+  it("should reflect the angle along x-axis", function () {
+    let v = new Vector(0, 1);
+
+    v.reflectAlongX();
+
+    expect(v.x).to.be.closeTo(0, 0.001);
+    expect(v.y).to.be.closeTo(-1, 0.001);
+  });
+
+  it("should reflect the angle along y-axis", function () {
+    let v = new Vector(1, 0);
+
+    v.reflectAlongY();
+
+    expect(v.x).to.be.closeTo(-1, 0.001);
+    expect(v.y).to.be.closeTo(0, 0.001);
+  });
 });
