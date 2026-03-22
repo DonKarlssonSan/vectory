@@ -6,6 +6,9 @@ name: Publish Package to npmjs.com
 on:
   release:
     types: [created]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 permissions:
   id-token: write # Required for OIDC
