@@ -1,4 +1,4 @@
-[![CI Build Status](https://github.com/DonKarlssonSan/vectory/actions/workflows/test.yml/badge.svg)
+![CI Build Status](https://github.com/DonKarlssonSan/vectory/actions/workflows/test.yml/badge.svg)
 # vectory
 vectory is a JavaScript vector math library written in ES6.
 
