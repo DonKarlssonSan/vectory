@@ -3,17 +3,17 @@ import { expect } from "chai";
 
 describe("Vector", function () {
   it("should add", function () {
-    var v1 = new Vector(2, 3);
-    var v2 = new Vector(4, 5);
+    let v1 = new Vector(2, 3);
+    let v2 = new Vector(4, 5);
 
-    var sum = v1.add(v2);
+    let sum = v1.add(v2);
     expect(sum.x).to.equal(6);
     expect(sum.y).to.equal(8);
   });
 
   it("should add to", function () {
-    var v1 = new Vector(2, 3);
-    var v2 = new Vector(4, 5);
+    let v1 = new Vector(2, 3);
+    let v2 = new Vector(4, 5);
 
     v1.addTo(v2);
     expect(v1.x).to.equal(6);
@@ -21,17 +21,17 @@ describe("Vector", function () {
   });
 
   it("should subtract", function () {
-    var v1 = new Vector(2, 3);
-    var v2 = new Vector(4, 5);
+    let v1 = new Vector(2, 3);
+    let v2 = new Vector(4, 5);
 
-    var diff = v1.sub(v2);
+    let diff = v1.sub(v2);
     expect(diff.x).to.equal(-2);
     expect(diff.y).to.equal(-2);
   });
 
   it("should subtract from", function () {
-    var v1 = new Vector(2, 3);
-    var v2 = new Vector(4, 5);
+    let v1 = new Vector(2, 3);
+    let v2 = new Vector(4, 5);
 
     v1.subFrom(v2);
     expect(v1.x).to.equal(-2);
@@ -39,7 +39,7 @@ describe("Vector", function () {
   });
 
   it("should set angle", function () {
-    var v1 = new Vector(1, 0);
+    let v1 = new Vector(1, 0);
     v1.setAngle(Math.PI / 2);
 
     expect(v1.x).to.be.closeTo(0, 0.001);
@@ -47,47 +47,47 @@ describe("Vector", function () {
   });
 
   it("should set length", function () {
-    var v1 = new Vector(1, 0);
+    let v1 = new Vector(1, 0);
     v1.setLength(2);
 
     expect(v1.x).to.equal(2);
     expect(v1.y).to.equal(0);
   });
-  
+
   it("should multiply", function () {
-    var v1 = new Vector(2, 3);
-    var result = v1.mult(3);
+    let v1 = new Vector(2, 3);
+    let result = v1.mult(3);
 
     expect(result.x).to.equal(6);
-    expect(result.y).to.equal(9);    
+    expect(result.y).to.equal(9);
   });
-  
+
   it("should divide", function () {
-    var v1 = new Vector(6, 9);
-    var result = v1.div(3);
+    let v1 = new Vector(6, 9);
+    let result = v1.div(3);
 
     expect(result.x).to.equal(2);
-    expect(result.y).to.equal(3);    
+    expect(result.y).to.equal(3);
   });
 
   it("should get length", function () {
-    var v1 = new Vector(3, 4);
-    var result = v1.getLength();
+    let v1 = new Vector(3, 4);
+    let result = v1.getLength();
 
     expect(result).to.equal(5);
   });
 
   it("should get length squared", function () {
-    var v1 = new Vector(3, 4);
-    var result = v1.getLengthSq();
+    let v1 = new Vector(3, 4);
+    let result = v1.getLengthSq();
 
     expect(result).to.equal(25);
   });
 
   it("should return distance 5 between", function () {
-    var v1 = new Vector(7, 2);
-    var v2 = new Vector(4, 6);
-    var result = v1.distanceTo(v2);
+    let v1 = new Vector(7, 2);
+    let v2 = new Vector(4, 6);
+    let result = v1.distanceTo(v2);
 
     expect(result).to.equal(5);
     expect(v1.x).to.equal(7);
@@ -97,9 +97,9 @@ describe("Vector", function () {
   });
 
   it("should return squared distance 25", function () {
-    var v1 = new Vector(7, 2);
-    var v2 = new Vector(4, 6);
-    var result = v1.distanceToSq(v2);
+    let v1 = new Vector(7, 2);
+    let v2 = new Vector(4, 6);
+    let result = v1.distanceToSq(v2);
 
     expect(result).to.equal(25);
     expect(v1.x).to.equal(7);
@@ -109,8 +109,8 @@ describe("Vector", function () {
   });
 
   it("should copy a vector", function () {
-    var v1 = new Vector(3, 4);
-    var v2 = v1.copy();
+    let v1 = new Vector(3, 4);
+    let v2 = v1.copy();
     v1.x = 1;
     v1.y = 2;
 
@@ -119,17 +119,17 @@ describe("Vector", function () {
   });
 
   it("should rotate a quarter turn anticlockwise", function () {
-    var v1 = new Vector(1, 0);
-    var v2 = v1.rotate(Math.PI / 2);
+    let v1 = new Vector(1, 0);
+    let v2 = v1.rotate(Math.PI / 2);
 
     expect(v2.x).to.be.closeTo(0, 0.01);
     expect(v2.y).to.be.closeTo(1, 0.01);
   });
 
   it("should rotate a quarter turn anticlockwise around another point", function () {
-    var v1 = new Vector(4, 0);
-    var v2 = new Vector(2, 0);
-    var result = v1.rotateAround(v2, Math.PI / 2);
+    let v1 = new Vector(4, 0);
+    let v2 = new Vector(2, 0);
+    let result = v1.rotateAround(v2, Math.PI / 2);
 
     expect(result.x).to.be.closeTo(2, 0.001);
     expect(result.y).to.be.closeTo(2, 0.001);
