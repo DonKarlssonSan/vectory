@@ -13,6 +13,7 @@ export default class Vector {
   addTo(v) {
     this.x += v.x;
     this.y += v.y;
+    return this;
   }
 
   sub(v) {
@@ -20,38 +21,51 @@ export default class Vector {
       this.x - v.x,
       this.y - v.y);
   }
-  
+
   subFrom(v) {
     this.x -= v.x;
     this.y -= v.y;
+    return this;
   }
-  
+
   mult(n) {
     return new Vector(this.x * n, this.y * n);
   }
-  
+
+  multTo(n) {
+    this.x *= n;
+    this.y *= n;
+    return this;
+  }
+
   div(n) {
     return new Vector(this.x / n, this.y / n);
   }
-  
+
+  divTo(n) {
+    this.x /= n;
+    this.y /= n;
+    return this;
+  }
+
   setAngle(angle) {
-    var length = this.getLength();
+    let length = this.getLength();
     this.x = Math.cos(angle) * length;
     this.y = Math.sin(angle) * length;
     return this;
   }
-  
+
   setLength(length) {
-    var angle = this.getAngle();
+    let angle = this.getAngle();
     this.x = Math.cos(angle) * length;
     this.y = Math.sin(angle) * length;
     return this;
   }
-  
+
   getAngle() {
     return Math.atan2(this.y, this.x);
   }
-  
+
   getLength() {
     return Math.hypot(this.x, this.y);
   }
@@ -67,7 +81,7 @@ export default class Vector {
   distanceToSq(v) {
     return this.sub(v).getLengthSq();
   }
-  
+
   copy() {
     return new Vector(this.x, this.y);
   }
@@ -81,7 +95,7 @@ export default class Vector {
     let y = (v.y - this.y) * Math.cos(angle) + (this.x - v.x) * Math.sin(angle) + v.y;
     return new Vector(x, y);
   }
-  
+
   lerp(v, t) {
     let delta = v.sub(this).mult(t);
     return this.add(delta);
